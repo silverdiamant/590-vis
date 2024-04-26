@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #inc_chart.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #inc_chart.vega-embed details,
+    #inc_chart.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="inc_chart"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "hconcat": [{"data": {"name": "data-b1831b3724e537e5c03e3b2ce1977960"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Proportion of average relative change in size of populations", "scale": {"scheme": "greenblue"}, "type": "quantitative"}, "x": {"axis": {"format": "%"}, "field": "Proportion of average relative change in size of populations", "scale": {"type": "log"}, "title": "Percent average relative change in size of populations", "type": "quantitative"}, "y": {"field": "Common Name", "sort": "-x", "type": "nominal"}}, "height": 500, "title": "Top 20 Animals in the World with Greatest Increase in Population", "width": 400}, {"data": {"name": "data-961b5961c43ee9b9ac774ff5ed6882ca"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Proportion of average relative change in size of populations", "scale": {"scheme": "purpleblue", "reverse": true}, "type": "quantitative"}, "x": {"axis": {"format": "%"}, "field": "Proportion of average relative change in size of populations", "scale": {"domain": [0, -1]}, "title": "Percent average relative change in size of populations", "type": "quantitative"}, "y": {"field": "Order", "sort": "x", "type": "nominal"}}, "height": 500, "title": "Top 20 Orders in the World with Greatest Decrease in Population", "width": 400}], "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json", "datasets": {"data-b1831b3724e537e5c03e3b2ce1977960": [{"Common Name": "American plaice", "Proportion of average relative change in size of populations": 976930.9108565}, {"Common Name": "Silver hake / Whiting", "Proportion of average relative change in size of populations": 422159.4913418043}, {"Common Name": "American eel", "Proportion of average relative change in size of populations": 40527.0}, {"Common Name": "Dunlin", "Proportion of average relative change in size of populations": 30995.3}, {"Common Name": "Capelin", "Proportion of average relative change in size of populations": 12848.4110304}, {"Common Name": "Chub mackerel", "Proportion of average relative change in size of populations": 10138.79365079365}, {"Common Name": "Atlantic halibut", "Proportion of average relative change in size of populations": 6612.344849877519}, {"Common Name": "European sprat", "Proportion of average relative change in size of populations": 4651.217741935484}, {"Common Name": "Atlantic mackerel", "Proportion of average relative change in size of populations": 2840.0742433809087}, {"Common Name": "Eurasian oystercatcher", "Proportion of average relative change in size of populations": 543.1280034675325}, {"Common Name": "Stoat / Short-tailed weasel / Ermine", "Proportion of average relative change in size of populations": 468.99999999999994}, {"Common Name": "Black-tailed godwit", "Proportion of average relative change in size of populations": 392.0517906714286}, {"Common Name": "Moose", "Proportion of average relative change in size of populations": 367.74435590969455}, {"Common Name": "European eel", "Proportion of average relative change in size of populations": 363.4866666666666}, {"Common Name": "Sea lamprey", "Proportion of average relative change in size of populations": 355.8228105906313}, {"Common Name": "Chimpanzee", "Proportion of average relative change in size of populations": 293.28571428571433}, {"Common Name": "Haddock", "Proportion of average relative change in size of populations": 247.85189068491349}, {"Common Name": "Long-tailed tit", "Proportion of average relative change in size of populations": 166.555621}, {"Common Name": "Ruddy turnstone", "Proportion of average relative change in size of populations": 160.40526315789472}, {"Common Name": "Common pheasant", "Proportion of average relative change in size of populations": 157.881926}], "data-961b5961c43ee9b9ac774ff5ed6882ca": [{"Order": "Aulopiformes", "Proportion of average relative change in size of populations": -1.0}, {"Order": "Procellariformes", "Proportion of average relative change in size of populations": -1.0}, {"Order": "Pterocliformes", "Proportion of average relative change in size of populations": -1.0}, {"Order": "Rhinopristiformes", "Proportion of average relative change in size of populations": -1.0}, {"Order": "Istiophoriformes", "Proportion of average relative change in size of populations": -1.0}, {"Order": "Acropomatiformes", "Proportion of average relative change in size of populations": -0.999755614580453}, {"Order": "Perissodactyla", "Proportion of average relative change in size of populations": -0.999752859135286}, {"Order": "Esociformes", "Proportion of average relative change in size of populations": -0.9951727272727273}, {"Order": "Centrarchiformes", "Proportion of average relative change in size of populations": -0.993533004069296}, {"Order": "Anseriformes", "Proportion of average relative change in size of populations": -0.9790027361495143}, {"Order": "Carnivora", "Proportion of average relative change in size of populations": -0.9710624656572262}, {"Order": "Gruiformes", "Proportion of average relative change in size of populations": -0.949687720318899}, {"Order": "Trachichthyiformes", "Proportion of average relative change in size of populations": -0.885593220338983}, {"Order": "Rodentia", "Proportion of average relative change in size of populations": -0.7702424773679335}, {"Order": "Perciformes", "Proportion of average relative change in size of populations": -0.5891216227198747}, {"Order": "Testudines", "Proportion of average relative change in size of populations": -0.4784343246753247}, {"Order": "Strigiformes", "Proportion of average relative change in size of populations": -0.4775844806007509}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('inc_chart');
+      vegaEmbed("#inc_chart", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-961b5961c43ee9b9ac774ff5ed6882ca"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Proportion of average relative change in size of populations", "scale": {"scheme": "purpleblue", "reverse": true}, "type": "quantitative"}, "x": {"axis": {"format": "%"}, "field": "Proportion of average relative change in size of populations", "scale": {"domain": [0, -1]}, "title": "Percent average relative change in size of populations", "type": "quantitative"}, "y": {"field": "Order", "sort": "x", "type": "nominal"}}, "height": 500, "title": "Top 20 Orders in the World with Greatest Decrease in Population", "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json", "datasets": {"data-961b5961c43ee9b9ac774ff5ed6882ca": [{"Order": "Aulopiformes", "Proportion of average relative change in size of populations": -1.0}, {"Order": "Procellariformes", "Proportion of average relative change in size of populations": -1.0}, {"Order": "Pterocliformes", "Proportion of average relative change in size of populations": -1.0}, {"Order": "Rhinopristiformes", "Proportion of average relative change in size of populations": -1.0}, {"Order": "Istiophoriformes", "Proportion of average relative change in size of populations": -1.0}, {"Order": "Acropomatiformes", "Proportion of average relative change in size of populations": -0.999755614580453}, {"Order": "Perissodactyla", "Proportion of average relative change in size of populations": -0.999752859135286}, {"Order": "Esociformes", "Proportion of average relative change in size of populations": -0.9951727272727273}, {"Order": "Centrarchiformes", "Proportion of average relative change in size of populations": -0.993533004069296}, {"Order": "Anseriformes", "Proportion of average relative change in size of populations": -0.9790027361495143}, {"Order": "Carnivora", "Proportion of average relative change in size of populations": -0.9710624656572262}, {"Order": "Gruiformes", "Proportion of average relative change in size of populations": -0.949687720318899}, {"Order": "Trachichthyiformes", "Proportion of average relative change in size of populations": -0.885593220338983}, {"Order": "Rodentia", "Proportion of average relative change in size of populations": -0.7702424773679335}, {"Order": "Perciformes", "Proportion of average relative change in size of populations": -0.5891216227198747}, {"Order": "Testudines", "Proportion of average relative change in size of populations": -0.4784343246753247}, {"Order": "Strigiformes", "Proportion of average relative change in size of populations": -0.4775844806007509}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
